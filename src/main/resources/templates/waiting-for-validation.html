@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Aguardando Dígitos</title>
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Aguardando os dígitos do e-mail de login</h1>
+        <form th:action="@{/v1/validate/confirm-validate}" method="post">
+            <input type="hidden" name="clientIdSession" th:value="${clientIdSession}">
+            <div class="form-group">
+                <label for="code">Digite os dígitos:</label>
+                <input type="text" class="form-control" id="code" name="code" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Confirmar</button>
+        </form>
+    </div>
+
+
+</body>
+</html>
